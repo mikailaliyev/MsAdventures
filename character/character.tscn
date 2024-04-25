@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqscvsxhssj1k"]
+
+[ext_resource type="Script" path="res://character/character.gd" id="1_np50e"]
+[ext_resource type="Texture2D" uid="uid://c7mcvq1srmvi0" path="res://graphics/character/character_idle.svg" id="3_twij1"]
+[ext_resource type="Texture2D" uid="uid://dgss4uuumcqxv" path="res://graphics/character/character_moving.svg" id="4_j7gj1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxb6d"]
+size = Vector2(80, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tf3pw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_twij1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_j7gj1")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Character" type="CharacterBody2D"]
+collision_mask = 30
+script = ExtResource("1_np50e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mxb6d")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 5300
+limit_bottom = 200
+editor_draw_limits = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_tf3pw")
+animation = &"walk"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

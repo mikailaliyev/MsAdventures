@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bejuiktcolb1l"]
+
+[ext_resource type="Texture2D" uid="uid://b4uwn3gobgrgt" path="res://graphics/portals/portal.svg" id="1_ekb35"]
+[ext_resource type="Script" path="res://portals/portal.gd" id="1_etgqp"]
+
+[node name="Portal" type="Area2D"]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_etgqp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ekb35")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.25, 0.25)
+polygon = PackedVector2Array(-344, -9, -320, -123, -263, -219, -176, -291, -90, -332, -2, -342, 81, -326, 165, -286, 235, -222, 291, -132, 310, -46, 312, -6, 310, 396, -342, 395)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

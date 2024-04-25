@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqscvsxhssj1k"]
+
+[ext_resource type="Texture2D" uid="uid://dvqkilktuw85d" path="res://graphics/player/Player.svg" id="1_edulj"]
+[ext_resource type="Script" path="res://character/character.gd" id="1_np50e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxb6d"]
+size = Vector2(80, 66)
+
+[node name="Character" type="CharacterBody2D"]
+collision_mask = 30
+script = ExtResource("1_np50e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_edulj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mxb6d")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 5300
+limit_bottom = 200
+editor_draw_limits = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
