@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://wb3wcbtcu7gk"]
+[gd_scene load_steps=12 format=3 uid="uid://wb3wcbtcu7gk"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_bqncg"]
 [ext_resource type="Texture2D" uid="uid://bes7uyq0xer0v" path="res://graphics/levels/level-1.svg" id="1_ssxnt"]
@@ -803,6 +803,11 @@ physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_4vdrt")
 sources/2 = SubResource("TileSetAtlasSource_8x4o1")
 
+[sub_resource type="LabelSettings" id="LabelSettings_fwjjj"]
+font_size = 25
+outline_size = 2
+outline_color = Color(0, 0.422655, 0.0333797, 1)
+
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_bqncg")
 
@@ -818,8 +823,8 @@ position = Vector2(5223, 504)
 collision_layer = 16
 collision_mask = 1
 
-[node name="Player" parent="." instance=ExtResource("5_ljy78")]
-position = Vector2(39, 42)
+[node name="Character" parent="." instance=ExtResource("5_ljy78")]
+position = Vector2(42, 80)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 2)
@@ -858,3 +863,17 @@ position = Vector2(4228, 250)
 
 [node name="Coin9" parent="Coins" instance=ExtResource("7_1attl")]
 position = Vector2(3942, 398)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("7_1attl")]
+position = Vector2(3155, 544)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="CoinsLabel" type="Label" parent="CanvasLayer2"]
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 80.0
+offset_bottom = 39.0
+text = "Coins:"
+label_settings = SubResource("LabelSettings_fwjjj")
+metadata/_edit_use_anchors_ = true

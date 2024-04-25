@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqscvsxhssj1k"]
+[gd_scene load_steps=7 format=3 uid="uid://cqscvsxhssj1k"]
 
 [ext_resource type="Script" path="res://character/character.gd" id="1_np50e"]
 [ext_resource type="Texture2D" uid="uid://c7mcvq1srmvi0" path="res://graphics/character/character_idle.svg" id="3_twij1"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxb6d"]
 size = Vector2(80, 66)
+
+[sub_resource type="LabelSettings" id="LabelSettings_86xin"]
+font_size = 25
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tf3pw"]
 animations = [{
@@ -40,6 +43,15 @@ limit_right = 5300
 limit_bottom = 200
 editor_draw_limits = true
 
+[node name="CoinsLabel" type="Label" parent="Camera2D"]
+offset_left = -21.0
+offset_top = -32.0
+offset_right = 52.0
+offset_bottom = 3.0
+text = "Coins:"
+label_settings = SubResource("LabelSettings_86xin")
+metadata/_edit_use_anchors_ = true
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
@@ -48,6 +60,5 @@ one_shot = true
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_tf3pw")
 animation = &"walk"
-metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
