@@ -32,7 +32,7 @@ func coin_added():
 	coins += 1
 	if coins > 0:
 		print(coins)
-		$"../CanvasLayer2/CoinsLabel".text = "Coins: " + str(coins)
+		$"../CoinsCounterCanvas/CoinsCounterLabel".text = "Coins: " + str(coins)
 
 func level_end():
 	get_tree().quit()

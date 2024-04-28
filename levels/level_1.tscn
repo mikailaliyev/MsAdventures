@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://wb3wcbtcu7gk"]
+[gd_scene load_steps=14 format=3 uid="uid://wb3wcbtcu7gk"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_bqncg"]
 [ext_resource type="Texture2D" uid="uid://bes7uyq0xer0v" path="res://graphics/levels/level-1.svg" id="1_ssxnt"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cqscvsxhssj1k" path="res://character/character.tscn" id="5_ljy78"]
 [ext_resource type="PackedScene" uid="uid://bejuiktcolb1l" path="res://portals/portal.tscn" id="6_x0vgs"]
 [ext_resource type="PackedScene" uid="uid://cr6cj5j10amiw" path="res://coins/coin.tscn" id="7_1attl"]
+[ext_resource type="Texture2D" uid="uid://c7mcvq1srmvi0" path="res://graphics/character/character_idle.svg" id="8_7f17w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4vdrt"]
 texture = ExtResource("2_raomr")
@@ -808,6 +809,11 @@ font_size = 25
 outline_size = 2
 outline_color = Color(0, 0.422655, 0.0333797, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_b0yyk"]
+font_size = 25
+outline_size = 2
+outline_color = Color(0, 0.423529, 0.0352941, 1)
+
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_bqncg")
 
@@ -819,7 +825,7 @@ region_enabled = true
 region_rect = Rect2(70.9672, 227.795, 980.801, 339.818)
 
 [node name="Portal" parent="." instance=ExtResource("6_x0vgs")]
-position = Vector2(5223, 504)
+position = Vector2(5223, 512)
 collision_layer = 16
 collision_mask = 1
 
@@ -867,13 +873,39 @@ position = Vector2(3942, 398)
 [node name="Coin10" parent="Coins" instance=ExtResource("7_1attl")]
 position = Vector2(3155, 544)
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="CoinsCounterCanvas" type="CanvasLayer" parent="."]
 
-[node name="CoinsLabel" type="Label" parent="CanvasLayer2"]
+[node name="CoinsCounterLabel" type="Label" parent="CoinsCounterCanvas"]
 offset_left = 7.0
-offset_top = 4.0
+offset_top = 6.0
 offset_right = 80.0
-offset_bottom = 39.0
+offset_bottom = 41.0
 text = "Coins:"
 label_settings = SubResource("LabelSettings_fwjjj")
 metadata/_edit_use_anchors_ = true
+
+[node name="Lives" type="Node2D" parent="CoinsCounterCanvas"]
+position = Vector2(215, 30)
+scale = Vector2(0.05, 0.05)
+
+[node name="Sprite2D" type="Sprite2D" parent="CoinsCounterCanvas/Lives"]
+position = Vector2(720, -80)
+texture = ExtResource("8_7f17w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CoinsCounterCanvas/Lives"]
+position = Vector2(1680, -80)
+texture = ExtResource("8_7f17w")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CoinsCounterCanvas/Lives"]
+position = Vector2(2620, -80)
+texture = ExtResource("8_7f17w")
+
+[node name="LivesCounterCanvas" type="CanvasLayer" parent="."]
+
+[node name="LivesCounterLabel" type="Label" parent="LivesCounterCanvas"]
+offset_left = 154.0
+offset_top = 7.0
+offset_right = 938.0
+offset_bottom = 447.0
+text = "Lives:"
+label_settings = SubResource("LabelSettings_b0yyk")
