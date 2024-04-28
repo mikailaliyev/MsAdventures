@@ -41,7 +41,7 @@ limit_bottom = 200
 editor_draw_limits = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.7
 one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
