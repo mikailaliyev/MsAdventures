@@ -1,12 +1,14 @@
 extends CharacterBody2D
 @onready var level = $".."
 @onready var portal = $"../Portal"
+@onready var enemies = $"../LivesCounterCanvas/Lives"
 var coins:int = 0
 var jump_available:bool = true
 
 func _ready():
 	level.connect("player_gains", coin_added)
 	portal.connect("portal_reached", level_end)
+	level.connect("enemy_collision", loosing_health)
 	$AnimatedSprite2D.animation = "idle"
 
 func _physics_process(_delta):
@@ -26,6 +28,9 @@ func _physics_process(_delta):
 	elif velocity == Vector2.ZERO:
 		$AnimatedSprite2D.animation = "idle"
 		
+	#if lost all lives then game over
+	if enemies.get_child_count() == 0:
+		get_tree().quit()
 
 		
 func coin_added():
@@ -33,6 +38,11 @@ func coin_added():
 	if coins > 0:
 		print(coins)
 		$"../CoinsCounterCanvas/CoinsCounterLabel".text = "Coins: " + str(coins)
+
+#erasing life icons if collided with enemies
+func loosing_health():
+	enemies.get_child(enemies.get_child_count() - 1).queue_free()
+
 
 func level_end():
 	get_tree().quit()
