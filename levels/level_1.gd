@@ -16,4 +16,3 @@ func character_collected():
 
 func enemy_attacking():
 	emit_signal("enemy_collision")
-	

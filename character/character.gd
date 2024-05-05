@@ -2,6 +2,7 @@ extends CharacterBody2D
 @onready var level = $".."
 @onready var portal = $"../Portal"
 @onready var enemies = $"../LivesCounterCanvas/Lives"
+@export var menu: PackedScene
 var coins:int = 0
 var jump_available:bool = true
 
@@ -30,7 +31,7 @@ func _physics_process(_delta):
 		
 	#if lost all lives then game over
 	if enemies.get_child_count() == 0:
-		get_tree().quit()
+		get_tree().reload_current_scene()
 
 		
 func coin_added():
@@ -44,8 +45,12 @@ func loosing_health():
 	enemies.get_child(enemies.get_child_count() - 1).queue_free()
 
 
+
 func level_end():
-	get_tree().quit()
+	call_deferred("change_scene")
+	
+func change_scene():
+	get_tree().change_scene_to_packed(menu)
 	
 #gravity
 func gravity():
