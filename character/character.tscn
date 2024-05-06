@@ -36,7 +36,7 @@ shape = SubResource("RectangleShape2D_mxb6d")
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = 0
-limit_right = 5300
+limit_right = 7100
 limit_bottom = 200
 editor_draw_limits = true
 

@@ -13,8 +13,10 @@ func _ready():
 	$AnimatedSprite2D.animation = "idle"
 
 func _physics_process(_delta):
-	var direction := Input.get_axis("left", "right")
+	var direction = Input.get_axis("left", "right")
+
 	velocity.x = direction * 600
+	
 	move_and_slide()
 	
 	#gravity and jump
@@ -37,7 +39,6 @@ func _physics_process(_delta):
 func coin_added():
 	coins += 1
 	if coins > 0:
-		print(coins)
 		$"../CoinsCounterCanvas/CoinsCounterLabel".text = "Coins: " + str(coins)
 
 #erasing life icons if collided with enemies
