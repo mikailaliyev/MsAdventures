@@ -14,7 +14,6 @@ func _ready():
 
 func _physics_process(_delta):
 	var direction = Input.get_axis("left", "right")
-
 	velocity.x = direction * 600
 	
 	move_and_slide()
@@ -33,6 +32,8 @@ func _physics_process(_delta):
 		
 	#if lost all lives then game over
 	if enemies.get_child_count() == 0:
+		$CollisionShape2D.disabled = true
+		await get_tree().create_timer(1.5).timeout
 		get_tree().reload_current_scene()
 
 		
