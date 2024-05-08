@@ -36,6 +36,7 @@ func _physics_process(_delta):
 		Engine.time_scale = 0.5
 		await get_tree().create_timer(0.5).timeout
 		get_tree().reload_current_scene()
+		Engine.time_scale = 1.0
 
 		
 func coin_added():
