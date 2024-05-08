@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://wb3wcbtcu7gk"]
+[gd_scene load_steps=19 format=3 uid="uid://wb3wcbtcu7gk"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_bqncg"]
 [ext_resource type="Texture2D" uid="uid://bes7uyq0xer0v" path="res://graphics/levels/level-1.svg" id="1_ssxnt"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cqscvsxhssj1k" path="res://character/character.tscn" id="5_ljy78"]
 [ext_resource type="PackedScene" uid="uid://bejuiktcolb1l" path="res://portals/portal.tscn" id="6_x0vgs"]
 [ext_resource type="PackedScene" uid="uid://cr6cj5j10amiw" path="res://coins/coin.tscn" id="7_1attl"]
+[ext_resource type="Texture2D" uid="uid://bud6ghaavj1vk" path="res://graphics/rectangles/rectangle.svg" id="7_bfjt5"]
 [ext_resource type="Texture2D" uid="uid://c7mcvq1srmvi0" path="res://graphics/character/character_idle.svg" id="8_7f17w"]
 [ext_resource type="PackedScene" uid="uid://wqh1bp7vmudn" path="res://enemies/enemy.tscn" id="9_ymn3l"]
 [ext_resource type="Texture2D" uid="uid://c5vh30tomvrjo" path="res://graphics/arrows/arrow.svg" id="11_v5yrg"]
@@ -838,6 +839,7 @@ scale = Vector2(7.26224, 2.52507)
 texture = ExtResource("1_ssxnt")
 region_enabled = true
 region_rect = Rect2(70.9672, 227.795, 980.801, 339.818)
+metadata/_edit_lock_ = true
 
 [node name="Character" parent="." instance=ExtResource("5_ljy78")]
 unique_name_in_owner = true
@@ -873,7 +875,7 @@ offset_top = 247.0
 offset_right = 936.0
 offset_bottom = 334.0
 theme_override_font_sizes/font_size = 30
-text = "Use left arrow key to move to the right "
+text = "Use left arrow key to move to the left "
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -904,6 +906,96 @@ rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_v5yrg")
 
+[node name="LabelForCoinsCounter" type="Label" parent="GameControlsInsturctions"]
+unique_name_in_owner = true
+visible = false
+offset_left = 287.0
+offset_top = 247.0
+offset_right = 712.0
+offset_bottom = 334.0
+theme_override_font_sizes/font_size = 30
+text = "Coins show up here when you collect them
+press Escape to proceed"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="RectangleForCoins" type="Sprite2D" parent="GameControlsInsturctions"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(67, 27)
+scale = Vector2(0.254545, 0.214425)
+texture = ExtResource("7_bfjt5")
+region_enabled = true
+region_rect = Rect2(122, 418.5, 550, 288)
+
+[node name="LabelForLivesCounter" type="Label" parent="GameControlsInsturctions"]
+unique_name_in_owner = true
+visible = false
+offset_left = 287.0
+offset_top = 247.0
+offset_right = 712.0
+offset_bottom = 334.0
+theme_override_font_sizes/font_size = 30
+text = "Here you can see total number of lives you have
+press Escape to proceed"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="RectangleForLives" type="Sprite2D" parent="GameControlsInsturctions"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(265, 27)
+scale = Vector2(0.490909, 0.214425)
+texture = ExtResource("7_bfjt5")
+region_enabled = true
+region_rect = Rect2(122, 418.5, 550, 288)
+
+[node name="LabelForCoinsIntro" type="Label" parent="GameControlsInsturctions"]
+unique_name_in_owner = true
+visible = false
+offset_left = 1624.0
+offset_top = 275.0
+offset_right = 2072.0
+offset_bottom = 407.0
+theme_override_font_sizes/font_size = 30
+text = "Collect coins 
+press Escape to proceed"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RectangleForCoinsIntro" type="Sprite2D" parent="GameControlsInsturctions"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(2201.5, 396)
+scale = Vector2(0.187273, 0.3125)
+texture = ExtResource("7_bfjt5")
+region_enabled = true
+region_rect = Rect2(122, 418.5, 550, 288)
+
+[node name="LabelForEnemyIntro" type="Label" parent="GameControlsInsturctions"]
+unique_name_in_owner = true
+visible = false
+offset_left = 2425.0
+offset_top = 253.0
+offset_right = 2931.0
+offset_bottom = 385.0
+theme_override_font_sizes/font_size = 30
+text = "Avoid enemies or you lose a life
+Escape to proceed"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RectangleForEnemyIntro" type="Sprite2D" parent="GameControlsInsturctions"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(2948, 396)
+scale = Vector2(0.231817, 0.350694)
+texture = ExtResource("7_bfjt5")
+region_enabled = true
+region_rect = Rect2(122, 418.5, 550, 288)
+
 [node name="Portal" parent="." instance=ExtResource("6_x0vgs")]
 position = Vector2(7013, 501)
 collision_layer = 16
@@ -921,34 +1013,35 @@ layer_1/tile_data = PackedInt32Array(786481, 327682, 5, 786432, 131074, 5, 78643
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin8" parent="Coins" instance=ExtResource("7_1attl")]
-position = Vector2(5212.13, 83)
+position = Vector2(5227, 106)
 
 [node name="Coin7" parent="Coins" instance=ExtResource("7_1attl")]
 position = Vector2(7048, 97)
 
 [node name="Coin" parent="Coins" instance=ExtResource("7_1attl")]
-position = Vector2(2200, 382)
+position = Vector2(2200, 393)
+metadata/_edit_lock_ = true
 
 [node name="Coin2" parent="Coins" instance=ExtResource("7_1attl")]
-position = Vector2(2430, 380)
+position = Vector2(2430, 391)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("7_1attl")]
-position = Vector2(3216, 389)
+position = Vector2(3216, 394)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("7_1attl")]
 position = Vector2(3645.13, 547)
 
 [node name="Coin5" parent="Coins" instance=ExtResource("7_1attl")]
-position = Vector2(4235.13, 94)
+position = Vector2(4233, 103)
 
 [node name="Coin6" parent="Coins" instance=ExtResource("7_1attl")]
-position = Vector2(6018, 239)
+position = Vector2(6026, 241)
 
 [node name="Coin9" parent="Coins" instance=ExtResource("7_1attl")]
 position = Vector2(5732, 387)
 
 [node name="Coin10" parent="Coins" instance=ExtResource("7_1attl")]
-position = Vector2(4945, 533)
+position = Vector2(4943, 548)
 
 [node name="CoinsCounterCanvas" type="CanvasLayer" parent="."]
 
@@ -991,7 +1084,7 @@ texture = ExtResource("8_7f17w")
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("9_ymn3l")]
-position = Vector2(2941, 396)
+position = Vector2(2949, 396)
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("9_ymn3l")]
 position = Vector2(4490, 192)
