@@ -870,9 +870,9 @@ texture = ExtResource("11_v5yrg")
 [node name="LabelForLeftControl" type="Label" parent="GameControlsInsturctions"]
 unique_name_in_owner = true
 visible = false
-offset_left = 511.0
+offset_left = 402.0
 offset_top = 247.0
-offset_right = 936.0
+offset_right = 827.0
 offset_bottom = 334.0
 theme_override_font_sizes/font_size = 30
 text = "Use left arrow key to move to the left "
@@ -882,16 +882,16 @@ autowrap_mode = 2
 [node name="ArrowLeft" type="Sprite2D" parent="GameControlsInsturctions"]
 unique_name_in_owner = true
 visible = false
-position = Vector2(721, 367)
+position = Vector2(612, 367)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_v5yrg")
 
 [node name="LabelForUpControl" type="Label" parent="GameControlsInsturctions"]
 unique_name_in_owner = true
 visible = false
-offset_left = 287.0
+offset_left = 297.0
 offset_top = 247.0
-offset_right = 712.0
+offset_right = 722.0
 offset_bottom = 334.0
 theme_override_font_sizes/font_size = 30
 text = "Use up arrow or Space key to jump"
@@ -901,7 +901,7 @@ autowrap_mode = 2
 [node name="ArrowUp" type="Sprite2D" parent="GameControlsInsturctions"]
 unique_name_in_owner = true
 visible = false
-position = Vector2(493, 390)
+position = Vector2(503, 390)
 rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_v5yrg")
