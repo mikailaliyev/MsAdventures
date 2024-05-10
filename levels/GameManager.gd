@@ -134,7 +134,7 @@ func save_data(data):
 	
 func load_data():
 	if FileAccess.file_exists(save_path):
-		var file = FileAccess.open(save_path, FileAccess.READ)
+		var _file = FileAccess.open(save_path, FileAccess.READ)
 		left_control = 1
 		right_control = 1
 		jump_control = 1
