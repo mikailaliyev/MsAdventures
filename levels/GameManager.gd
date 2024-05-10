@@ -4,13 +4,6 @@ var save_path = "res://variable.save"
 
 #Game control tips variables
 var is_paused: bool = false
-var left_control: int = 0
-var right_control: int = 0
-var jump_control: int = 0
-var coin_control: int = 0
-var life_control: int = 0
-var coin_intro_control: int = 0
-var enemy_intro_control: int = 0
 var all_controls: int = 0
 
 func _ready():
@@ -19,15 +12,13 @@ func _ready():
 
 func _process(_delta):
 	#Teaching moving controls
-	if right_control == 0:
+	if all_controls == 0:
 		if $"../Character".is_on_floor():
 			if !Input.is_action_pressed("right"):
 				get_tree().paused = true
 			else: 
 				get_tree().paused = false
-				right_control += 1
 				all_controls += 1
-				save_data(right_control)
 				%LabelForRightControl.hide()
 				%ArrowRight.hide()
 	else:
@@ -35,7 +26,7 @@ func _process(_delta):
 			%ArrowRight.hide()	
 	
 	
-	if left_control == 0:
+	if all_controls == 1:
 		if %Character.position.x > 600:
 			%LabelForLeftControl.show()
 			%ArrowLeft.show()
@@ -43,14 +34,12 @@ func _process(_delta):
 				get_tree().paused = true
 			else: 
 				get_tree().paused = false
-				left_control += 1
 				all_controls += 1
-				save_data(left_control)
 				%LabelForLeftControl.hide()
 				%ArrowLeft.hide()
 	
 			
-	if jump_control == 0 && all_controls == 2 :
+	if all_controls == 2 :
 		if %Character.position.x < 500:
 			%LabelForUpControl.show()
 			%ArrowUp.show()
@@ -58,39 +47,34 @@ func _process(_delta):
 				get_tree().paused = true
 			else: 
 				get_tree().paused = false
-				jump_control += 1
 				all_controls += 1
-				save_data(jump_control)
 				%LabelForUpControl.hide()
 				%ArrowUp.hide()
 		
-	if coin_control == 0:
-		if %Character.position.x > 500 && all_controls == 3:
+	if all_controls == 3:
+		if %Character.position.x > 500:
 			%LabelForCoinsCounter.show()
 			%RectangleForCoins.show()			
 			get_tree().paused = true
 			if Input.is_action_just_pressed("pause"): 
 				get_tree().paused = false
-				coin_control += 1
 				all_controls += 1
-				save_data(coin_control)
 				%LabelForCoinsCounter.hide()
 				%RectangleForCoins.hide()
 	
-	if life_control == 0:
-		if %Character.position.x > 550 && coin_control > 0:
+	if all_controls == 4:
+		if %Character.position.x > 550:
 			%LabelForLivesCounter.show()
 			%RectangleForLives.show()
 			if !Input.is_action_pressed("pause"):
 				get_tree().paused = true
 			else: 
 				get_tree().paused = false
-				life_control += 1
-				save_data(life_control)
+				all_controls += 1
 				%LabelForLivesCounter.hide()
 				%RectangleForLives.hide()
-				
-	if coin_intro_control == 0:
+
+	if all_controls == 5:
 		if %Character.position.x > 2100:
 			%LabelForCoinsIntro.show()
 			%RectangleForCoinsIntro.show()
@@ -98,12 +82,11 @@ func _process(_delta):
 				get_tree().paused = true
 			else: 
 				get_tree().paused = false
-				coin_intro_control += 1
-				save_data(coin_intro_control)
+				all_controls += 1
 				%LabelForCoinsIntro.hide()
 				%RectangleForCoinsIntro.hide()
 
-	if enemy_intro_control == 0:
+	if all_controls == 6:
 		if %Character.position.x > 2800:
 			%LabelForEnemyIntro.show()
 			%RectangleForEnemyIntro.show()
@@ -111,11 +94,10 @@ func _process(_delta):
 				get_tree().paused = true
 			else: 
 				get_tree().paused = false
-				enemy_intro_control += 1
-				save_data(enemy_intro_control)
+				all_controls += 1
+				save_data(all_controls)
 				%LabelForEnemyIntro.hide()
 				%RectangleForEnemyIntro.hide()
-
 
 func pause_game():
 	if Input.is_action_just_pressed("pause"):
@@ -135,12 +117,6 @@ func save_data(data):
 func load_data():
 	if FileAccess.file_exists(save_path):
 		var _file = FileAccess.open(save_path, FileAccess.READ)
-		left_control = 1
-		right_control = 1
-		jump_control = 1
-		coin_control = 1
-		life_control = 1
-		coin_intro_control = 1
-		enemy_intro_control = 1
+		all_controls = 7
 	else:
 		print("no data")
