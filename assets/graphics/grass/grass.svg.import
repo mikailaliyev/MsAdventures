@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5vh30tomvrjo"
-path="res://.godot/imported/arrow.svg-349078209834de3f0f2005e4da972a38.ctex"
+uid="uid://cv07qkv34ekyq"
+path="res://.godot/imported/grass.svg-a7536b82272c4ac44f3a05519c22b946.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/arrows/arrow.svg"
-dest_files=["res://.godot/imported/arrow.svg-349078209834de3f0f2005e4da972a38.ctex"]
+source_file="res://assets/graphics/grass/grass.svg"
+dest_files=["res://.godot/imported/grass.svg-a7536b82272c4ac44f3a05519c22b946.ctex"]
 
 [params]
 

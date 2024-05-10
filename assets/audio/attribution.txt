@@ -1,0 +1,8 @@
+Theme music: Hero Immortal by Trevor Lentz 
+https://open.spotify.com/artist/3AjWA7sRmeZSKqr7PoKL6k?si=OP9fcEGdTZG_GMWj44h_Jw
+
+Coin pickup sound: Coin Pickup SFX [1] by SoundDesignForYou -- https://freesound.org/s/646673/ -- License: Creative Commons 0
+
+Damage sound: 8-bit Hurt.aif by timgormly -- https://freesound.org/s/170149/ -- License: Attribution 3.0
+
+Laser blast sound: Error.ogg by MrAngelGames -- https://freesound.org/s/670276/ -- License: Creative Commons 0

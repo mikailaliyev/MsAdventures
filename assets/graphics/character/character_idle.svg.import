@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bud6ghaavj1vk"
-path="res://.godot/imported/rectangle.svg-deda25993e45e59ab48a8b09ceee95ce.ctex"
+uid="uid://c7mcvq1srmvi0"
+path="res://.godot/imported/character_idle.svg-d3db2a88e3c84a0c04f0df878280ab24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/rectangles/rectangle.svg"
-dest_files=["res://.godot/imported/rectangle.svg-deda25993e45e59ab48a8b09ceee95ce.ctex"]
+source_file="res://assets/graphics/character/character_idle.svg"
+dest_files=["res://.godot/imported/character_idle.svg-d3db2a88e3c84a0c04f0df878280ab24.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lgj52c3kcrng"
-path="res://.godot/imported/coin.svg-22f820ddac1c1d65230ae9484eafe6ba.ctex"
+uid="uid://c5vh30tomvrjo"
+path="res://.godot/imported/arrow.svg-2bc9ab5e48426170982be46259f3ef94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/coins/coin.svg"
-dest_files=["res://.godot/imported/coin.svg-22f820ddac1c1d65230ae9484eafe6ba.ctex"]
+source_file="res://assets/graphics/arrows/arrow.svg"
+dest_files=["res://.godot/imported/arrow.svg-2bc9ab5e48426170982be46259f3ef94.ctex"]
 
 [params]
 

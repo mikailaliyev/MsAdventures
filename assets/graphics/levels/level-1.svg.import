@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4uwn3gobgrgt"
-path="res://.godot/imported/portal.svg-18c96bb8fff26ab01414526437b26ca7.ctex"
+uid="uid://bes7uyq0xer0v"
+path="res://.godot/imported/level-1.svg-9391518498fee70a6bc7b0892a921763.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/portals/portal.svg"
-dest_files=["res://.godot/imported/portal.svg-18c96bb8fff26ab01414526437b26ca7.ctex"]
+source_file="res://assets/graphics/levels/level-1.svg"
+dest_files=["res://.godot/imported/level-1.svg-9391518498fee70a6bc7b0892a921763.ctex"]
 
 [params]
 

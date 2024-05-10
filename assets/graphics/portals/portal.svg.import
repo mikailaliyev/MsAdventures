@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cful8kxr7h8ty"
-path="res://.godot/imported/bricks.svg-97173ad75cd7c4eb2044b91c82e1865e.ctex"
+uid="uid://b4uwn3gobgrgt"
+path="res://.godot/imported/portal.svg-b4b53ecfaaac69cf928a707ea10d505d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/walls/bricks.svg"
-dest_files=["res://.godot/imported/bricks.svg-97173ad75cd7c4eb2044b91c82e1865e.ctex"]
+source_file="res://assets/graphics/portals/portal.svg"
+dest_files=["res://.godot/imported/portal.svg-b4b53ecfaaac69cf928a707ea10d505d.ctex"]
 
 [params]
 

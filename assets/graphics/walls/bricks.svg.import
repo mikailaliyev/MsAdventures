@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv07qkv34ekyq"
-path="res://.godot/imported/grass.svg-e729ea0340948cf865fcdd7bf713b48c.ctex"
+uid="uid://cful8kxr7h8ty"
+path="res://.godot/imported/bricks.svg-7741cb4f2a5c249663295cc635a00249.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/grass/grass.svg"
-dest_files=["res://.godot/imported/grass.svg-e729ea0340948cf865fcdd7bf713b48c.ctex"]
+source_file="res://assets/graphics/walls/bricks.svg"
+dest_files=["res://.godot/imported/bricks.svg-7741cb4f2a5c249663295cc635a00249.ctex"]
 
 [params]
 
