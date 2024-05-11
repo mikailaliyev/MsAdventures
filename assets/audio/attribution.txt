@@ -5,4 +5,6 @@ Coin pickup sound: Coin Pickup SFX [1] by SoundDesignForYou -- https://freesound
 
 Damage sound: 8-bit Hurt.aif by timgormly -- https://freesound.org/s/170149/ -- License: Attribution 3.0
 
+Death sound: 8 bit Death sound by MentosLat -- https://freesound.org/s/417486/ -- License: Creative Commons 0
+
 Laser blast sound: Error.ogg by MrAngelGames -- https://freesound.org/s/670276/ -- License: Creative Commons 0

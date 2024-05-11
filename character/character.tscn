@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqscvsxhssj1k"]
+[gd_scene load_steps=10 format=3 uid="uid://cqscvsxhssj1k"]
 
 [ext_resource type="Script" path="res://character/character.gd" id="1_np50e"]
-[ext_resource type="Texture2D" uid="uid://c7mcvq1srmvi0" path="res://graphics/character/character_idle.svg" id="3_twij1"]
-[ext_resource type="Texture2D" uid="uid://dgss4uuumcqxv" path="res://graphics/character/character_moving.svg" id="4_j7gj1"]
+[ext_resource type="Texture2D" uid="uid://c7mcvq1srmvi0" path="res://assets/graphics/character/character_idle.svg" id="3_twij1"]
+[ext_resource type="AudioStream" uid="uid://blq25uc8rlkoh" path="res://assets/audio/417486__mentoslat__8-bit-death-sound.wav" id="4_c0sku"]
+[ext_resource type="Texture2D" uid="uid://dgss4uuumcqxv" path="res://assets/graphics/character/character_moving.svg" id="4_j7gj1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxb6d"]
 size = Vector2(80, 66)
@@ -25,6 +26,42 @@ animations = [{
 "name": &"walk",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_6rubh"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_m5gka"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ftgir"]
+_data = {
+"RESET": SubResource("Animation_m5gka"),
+"death": SubResource("Animation_6rubh")
+}
 
 [node name="Character" type="CharacterBody2D"]
 collision_mask = 30
@@ -49,5 +86,13 @@ scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_tf3pw")
 animation = &"walk"
 metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ftgir")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_c0sku")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
