@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rfxl0")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Main menu" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -25,18 +25,19 @@ offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="Main menu"]
 layout_mode = 2
 text = "Start"
 
-[node name="Option" type="Button" parent="VBoxContainer"]
+[node name="Option" type="Button" parent="Main menu"]
 layout_mode = 2
 text = "Options"
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="Quit" type="Button" parent="Main menu"]
 layout_mode = 2
 text = "Quit
 "
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Main menu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Main menu/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="Main menu/Quit" to="." method="_on_quit_pressed"]

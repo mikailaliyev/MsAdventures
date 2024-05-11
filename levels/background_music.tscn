@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bkvkhld3440mu"]
 
-[ext_resource type="AudioStream" uid="uid://b3ck1g6dsluql" path="res://assets/audio/Hero Immortal.mp3" id="1_2w64q"]
+[ext_resource type="AudioStream" uid="uid://qn1j1blrw5eb" path="res://assets/audio/Theme Song 8-bit V1 _looping.wav" id="1_hnbln"]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer"]
 process_mode = 3
-stream = ExtResource("1_2w64q")
+stream = ExtResource("1_hnbln")
 autoplay = true
 bus = &"Music"

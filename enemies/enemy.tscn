@@ -1,7 +1,92 @@
-[gd_scene load_steps=3 format=3 uid="uid://wqh1bp7vmudn"]
+[gd_scene load_steps=7 format=3 uid="uid://wqh1bp7vmudn"]
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_6sf1e"]
-[ext_resource type="Texture2D" uid="uid://cyvvks3mu8qom" path="res://graphics/enemies/enemy.svg" id="1_x8xw3"]
+[ext_resource type="Texture2D" uid="uid://cyvvks3mu8qom" path="res://assets/graphics/enemies/enemy.svg" id="1_x8xw3"]
+[ext_resource type="AudioStream" uid="uid://c2i448js48eho" path="res://assets/audio/damage.ogg" id="3_w13kc"]
+
+[sub_resource type="Animation" id="Animation_gmwyv"]
+resource_name = "damage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionPolygon2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Damage:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_mr8sw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionPolygon2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Damage:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nq3v0"]
+_data = {
+"RESET": SubResource("Animation_mr8sw"),
+"damage": SubResource("Animation_gmwyv")
+}
 
 [node name="Enemy" type="Area2D"]
 script = ExtResource("1_6sf1e")
@@ -13,5 +98,13 @@ polygon = PackedVector2Array(-325, 224, -31, -287, 1, -311, 23, -295, 329, 216, 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_x8xw3")
+
+[node name="Damage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_w13kc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nq3v0")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
