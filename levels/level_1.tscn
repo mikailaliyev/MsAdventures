@@ -975,6 +975,7 @@ region_rect = Rect2(122, 418.5, 550, 288)
 
 [node name="LabelForEnemyIntro" type="Label" parent="GameControlsInsturctions"]
 unique_name_in_owner = true
+visible = false
 offset_left = 2425.0
 offset_top = 253.0
 offset_right = 2931.0
