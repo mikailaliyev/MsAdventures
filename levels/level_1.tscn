@@ -856,7 +856,7 @@ offset_top = 247.0
 offset_right = 483.0
 offset_bottom = 308.0
 theme_override_font_sizes/font_size = 30
-text = "Use right arrow key to move to the right "
+text = "Right arrow key to move to the right "
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -875,7 +875,7 @@ offset_top = 247.0
 offset_right = 827.0
 offset_bottom = 334.0
 theme_override_font_sizes/font_size = 30
-text = "Use left arrow key to move to the left "
+text = "Left arrow key to move to the left "
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -894,7 +894,7 @@ offset_top = 247.0
 offset_right = 722.0
 offset_bottom = 334.0
 theme_override_font_sizes/font_size = 30
-text = "Use up arrow or Space key to jump"
+text = "Up arrow or Space key to jump"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -914,7 +914,7 @@ offset_top = 247.0
 offset_right = 712.0
 offset_bottom = 334.0
 theme_override_font_sizes/font_size = 30
-text = "Coins show up here when you collect them
+text = "Collected coins
 press Escape to proceed"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -936,7 +936,7 @@ offset_top = 247.0
 offset_right = 712.0
 offset_bottom = 334.0
 theme_override_font_sizes/font_size = 30
-text = "Here you can see total number of lives you have
+text = "Total number of lives you have
 press Escape to proceed"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -975,13 +975,12 @@ region_rect = Rect2(122, 418.5, 550, 288)
 
 [node name="LabelForEnemyIntro" type="Label" parent="GameControlsInsturctions"]
 unique_name_in_owner = true
-visible = false
 offset_left = 2425.0
 offset_top = 253.0
 offset_right = 2931.0
 offset_bottom = 385.0
 theme_override_font_sizes/font_size = 30
-text = "Avoid enemies or you lose a life
+text = "Avoid enemies
 Escape to proceed"
 horizontal_alignment = 1
 vertical_alignment = 1
