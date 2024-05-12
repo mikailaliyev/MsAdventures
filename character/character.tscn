@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqscvsxhssj1k"]
+[gd_scene load_steps=11 format=3 uid="uid://cqscvsxhssj1k"]
 
 [ext_resource type="Script" path="res://character/character.gd" id="1_np50e"]
+[ext_resource type="Texture2D" uid="uid://dkmv6cj8rk0x0" path="res://assets/graphics/character/character_damaged.svg" id="2_yamul"]
 [ext_resource type="Texture2D" uid="uid://c7mcvq1srmvi0" path="res://assets/graphics/character/character_idle.svg" id="3_twij1"]
 [ext_resource type="AudioStream" uid="uid://blq25uc8rlkoh" path="res://assets/audio/417486__mentoslat__8-bit-death-sound.wav" id="4_c0sku"]
 [ext_resource type="Texture2D" uid="uid://dgss4uuumcqxv" path="res://assets/graphics/character/character_moving.svg" id="4_j7gj1"]
@@ -10,6 +11,14 @@ size = Vector2(80, 66)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tf3pw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yamul")
+}],
+"loop": true,
+"name": &"damaged",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_twij1")
@@ -84,7 +93,8 @@ one_shot = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_tf3pw")
-animation = &"walk"
+animation = &"damaged"
+autoplay = "damaged"
 metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
