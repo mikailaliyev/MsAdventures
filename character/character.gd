@@ -14,7 +14,7 @@ func _ready():
 
 func _physics_process(_delta):
 	var direction = Input.get_axis("left", "right")
-	velocity.x = direction * 550
+	velocity.x = direction * 600
 	
 	move_and_slide()
 	
@@ -45,8 +45,8 @@ func _physics_process(_delta):
 	if lives.get_child_count() == 0 && $AnimationPlayer && $AnimationPlayer.current_animation != "death":
 		Engine.time_scale = 0.5
 		rotation_degrees = 45
-		$CollisionShape2D.disabled = true
 		$AnimationPlayer.play('death')
+		$CollisionShape2D.disabled = true
 		await get_tree().create_timer(0.5).timeout
 		if get_tree():
 			get_tree().reload_current_scene()
