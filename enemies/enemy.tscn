@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://wqh1bp7vmudn"]
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_6sf1e"]
-[ext_resource type="Texture2D" uid="uid://cyvvks3mu8qom" path="res://assets/graphics/enemies/enemy.svg" id="1_x8xw3"]
+[ext_resource type="Texture2D" uid="uid://cyvvks3mu8qom" path="res://graphics/enemies/enemy.svg" id="1_x8xw3"]
 [ext_resource type="AudioStream" uid="uid://c2i448js48eho" path="res://assets/audio/damage.ogg" id="3_w13kc"]
 
 [sub_resource type="Animation" id="Animation_mr8sw"]

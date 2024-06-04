@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var portal = $"../Portal"
 @onready var lives = $"../LivesCounterCanvas/Lives"
 @export var menu: PackedScene
+
 var coins:int = 0
 var jump_available:bool = true
 

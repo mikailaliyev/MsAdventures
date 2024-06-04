@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://character/character.gd" id="1_np50e"]
 [ext_resource type="Texture2D" uid="uid://dkmv6cj8rk0x0" path="res://assets/graphics/character/character_damaged.svg" id="2_yamul"]
-[ext_resource type="Texture2D" uid="uid://c7mcvq1srmvi0" path="res://assets/graphics/character/character_idle.svg" id="3_twij1"]
+[ext_resource type="Texture2D" uid="uid://c7mcvq1srmvi0" path="res://graphics/character/character_idle.svg" id="3_twij1"]
 [ext_resource type="AudioStream" uid="uid://blq25uc8rlkoh" path="res://assets/audio/417486__mentoslat__8-bit-death-sound.wav" id="4_c0sku"]
-[ext_resource type="Texture2D" uid="uid://dgss4uuumcqxv" path="res://assets/graphics/character/character_moving.svg" id="4_j7gj1"]
+[ext_resource type="Texture2D" uid="uid://dgss4uuumcqxv" path="res://graphics/character/character_moving.svg" id="4_j7gj1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxb6d"]
 size = Vector2(80, 66)
@@ -81,9 +81,12 @@ shape = SubResource("RectangleShape2D_mxb6d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
-limit_top = 0
+limit_top = -200
 limit_right = 7100
-limit_bottom = 200
+limit_bottom = 650
+position_smoothing_enabled = true
+drag_top_margin = 1.0
+editor_draw_screen = false
 editor_draw_limits = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -104,5 +107,7 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_c0sku")
+
+[node name="Node" type="Node" parent="."]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

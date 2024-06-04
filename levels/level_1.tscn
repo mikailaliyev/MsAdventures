@@ -1,18 +1,18 @@
 [gd_scene load_steps=19 format=3 uid="uid://wb3wcbtcu7gk"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_bqncg"]
-[ext_resource type="Texture2D" uid="uid://bes7uyq0xer0v" path="res://assets/graphics/levels/level-1.svg" id="1_ssxnt"]
-[ext_resource type="Texture2D" uid="uid://cful8kxr7h8ty" path="res://assets/graphics/walls/bricks.svg" id="2_raomr"]
+[ext_resource type="Texture2D" uid="uid://bes7uyq0xer0v" path="res://graphics/levels/level-1.svg" id="1_ssxnt"]
+[ext_resource type="Texture2D" uid="uid://cful8kxr7h8ty" path="res://graphics/walls/bricks.svg" id="2_raomr"]
 [ext_resource type="Script" path="res://levels/GameManager.gd" id="2_vk88u"]
 [ext_resource type="PackedScene" uid="uid://c4hlx3l6q121a" path="res://menu/menu.tscn" id="4_3kyjy"]
-[ext_resource type="Texture2D" uid="uid://cv07qkv34ekyq" path="res://assets/graphics/grass/grass.svg" id="4_tq0nw"]
+[ext_resource type="Texture2D" uid="uid://cv07qkv34ekyq" path="res://graphics/grass/grass.svg" id="4_tq0nw"]
 [ext_resource type="PackedScene" uid="uid://cqscvsxhssj1k" path="res://character/character.tscn" id="5_ljy78"]
 [ext_resource type="PackedScene" uid="uid://bejuiktcolb1l" path="res://portals/portal.tscn" id="6_x0vgs"]
 [ext_resource type="PackedScene" uid="uid://cr6cj5j10amiw" path="res://coins/coin.tscn" id="7_1attl"]
-[ext_resource type="Texture2D" uid="uid://bud6ghaavj1vk" path="res://assets/graphics/rectangles/rectangle.svg" id="7_bfjt5"]
-[ext_resource type="Texture2D" uid="uid://c7mcvq1srmvi0" path="res://assets/graphics/character/character_idle.svg" id="8_7f17w"]
+[ext_resource type="Texture2D" uid="uid://bud6ghaavj1vk" path="res://graphics/rectangles/rectangle.svg" id="7_bfjt5"]
+[ext_resource type="Texture2D" uid="uid://c7mcvq1srmvi0" path="res://graphics/character/character_idle.svg" id="8_7f17w"]
 [ext_resource type="PackedScene" uid="uid://wqh1bp7vmudn" path="res://enemies/enemy.tscn" id="9_ymn3l"]
-[ext_resource type="Texture2D" uid="uid://c5vh30tomvrjo" path="res://assets/graphics/arrows/arrow.svg" id="11_v5yrg"]
+[ext_resource type="Texture2D" uid="uid://c5vh30tomvrjo" path="res://graphics/arrows/arrow.svg" id="11_v5yrg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4vdrt"]
 texture = ExtResource("2_raomr")
@@ -844,7 +844,7 @@ metadata/_edit_lock_ = true
 [node name="Character" parent="." instance=ExtResource("5_ljy78")]
 unique_name_in_owner = true
 z_index = 5
-position = Vector2(61, 65)
+position = Vector2(61, 56)
 menu = ExtResource("4_3kyjy")
 
 [node name="GameControlsInsturctions" type="Node" parent="."]
@@ -859,6 +859,7 @@ theme_override_font_sizes/font_size = 30
 text = "Right arrow key to move to the right "
 horizontal_alignment = 1
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="ArrowRight" type="Sprite2D" parent="GameControlsInsturctions"]
 unique_name_in_owner = true
